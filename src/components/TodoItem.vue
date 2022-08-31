@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <li>
     {{ item.context }}
-    <button @click="todoStore.removeItem(item)">remove</button>
+    <el-button @click="todoStore.removeItem(item)">remove</el-button>
   </li>
 </template>
 
