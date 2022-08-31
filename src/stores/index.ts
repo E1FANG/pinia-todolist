@@ -1,14 +1,9 @@
 import { defineStore } from 'pinia'
 import { computed, reactive, ref } from 'vue'
 
-export type Item = {
-  id:number
-  context:string
-}
-
 let id = 1
 
-const generateId = ()=>{
+const generateId = () => {
   return id++
 }
 
@@ -18,20 +13,20 @@ export const useTodoStore = defineStore('todo', () => {
 
   const items = reactive<Item[]>([])
 
-  const itemsCount = computed(()=>items.length)
+  const itemsCount = computed(() => items.length)
 
-  const addItem =async ()=>{
+  const addItem = async () => {
     items.push({
-      id:generateId(),
-      context:newItem.value
+      id: generateId(),
+      context: newItem.value
     })
     newItem.value = ''
     return 12312321
   }
 
-  const removeItem = (item:Item)=>{
+  const removeItem = (item: Item) => {
     const index = items.indexOf(item)
-    items.splice(index,1)
+    items.splice(index, 1)
   }
 
   return {
