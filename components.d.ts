@@ -7,9 +7,12 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ATable: typeof import('ant-design-vue/es')['Table']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElInput: typeof import('element-plus/es')['ElInput']
+    Form: typeof import('./src/components/form/Form.vue')['default']
+    ProTable: typeof import('./src/components/pro-table/index.vue')['default']
     Todo: typeof import('./src/components/Todo.vue')['default']
     TodoItem: typeof import('./src/components/TodoItem.vue')['default']
   }
