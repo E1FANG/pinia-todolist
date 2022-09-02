@@ -1,9 +1,17 @@
 <script setup lang="ts">
+import { useRouter } from "vue-router";
 import  Todo  from "./components/Todo.vue";
-import {useTodoStore} from './stores'
 import TableView from './views/tableView/index.vue'
 
-const todoStore = useTodoStore()
+const router = useRouter()
+const changeRoute = (path:string,id:number)=>{
+  router.push({
+    path,
+    query:{
+      id
+    }
+  })
+}
 
  </script>
 
@@ -13,6 +21,9 @@ const todoStore = useTodoStore()
     <el-card>
       <TableView/>
     </el-card>
+    <RouterView/>
+    <el-button @click="changeRoute('/foo',12345678)">foo</el-button>
+    <el-button @click="changeRoute('/bar',87654321)">bar</el-button>
   </div>
 </template>
 

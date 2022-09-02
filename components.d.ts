@@ -13,6 +13,8 @@ declare module '@vue/runtime-core' {
     ElInput: typeof import('element-plus/es')['ElInput']
     Form: typeof import('./src/components/form/Form.vue')['default']
     ProTable: typeof import('./src/components/pro-table/index.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     Todo: typeof import('./src/components/Todo.vue')['default']
     TodoItem: typeof import('./src/components/TodoItem.vue')['default']
   }
